@@ -1,6 +1,4 @@
 #include "bsp.h"
-#include "bsp_gpio.h"
-#include "bsp_uart.h"
 
 static void BSP_SysTick_Init(void)
 {
@@ -27,7 +25,7 @@ void BSP_Init(void)
 {
 	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2); 	//设置NVIC中断分组2:2位抢占优先级，2位响应优先级
 	BSP_IO_Init();
-//	BSP_Uart_Init();
+	BSP_Uart_Init();
 	BSP_SysTick_Init();
 }
 

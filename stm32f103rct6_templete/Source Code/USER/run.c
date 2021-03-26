@@ -1,4 +1,6 @@
 #include "run.h"
+#include "bsp.h"
+#include <stdio.h>
 
 
 void System_Init()
@@ -20,20 +22,43 @@ void System_Init()
 //	TIM3_Int_Init(499,7199);							//72Mhz/(7199+1)=10Khz的.计数频率，0.1ms,  计数到(499+1)为50ms  
 }
 
+void Task_25MsHandle()
+{
+	if(Ev25Ms) return;
+	Ev25Ms = SysTick_25MS;
+}
+
+void Task_50MsHandle()
+{
+	if(Ev50Ms) return;
+	Ev50Ms = SysTick_50MS;
+}
+
+void Task_100MsHandle()
+{
+	if(Ev100Ms) return;
+	Ev100Ms = SysTick_100MS;
+}
+
+void Task_500MsHandle()
+{
+	if(Ev500Ms) return;
+	Ev500Ms = SysTick_500MS;
+}
+
+void Task_1SHandle()
+{
+	if(Ev1S) return;
+	Ev1S = SysTick_1S;
+}
+
 void System_Running()
 {
-	GPIO_SetBits(GPIOB,GPIO_Pin_5);
-	GPIO_SetBits(GPIOE,GPIO_Pin_5);
-	GPIO_ResetBits(GPIOB,GPIO_Pin_5);
-	GPIO_ResetBits(GPIOE,GPIO_Pin_5);
-//	Task_ReceiveHandle();
-//	Task_UARTHandle();
-//	Task_BodyHandle();
-//	
-//	Task_KEYHandle();
-//	Task_RC522Handle();
-//	Task_DHT22Handle();
-//	Task_MQ2Handle();
+	Task_25MsHandle();
+	Task_50MsHandle();
+	Task_100MsHandle();
+	Task_500MsHandle();
+	Task_1SHandle();
 }
 
 //void Task_ReceiveHandle()
@@ -78,4 +103,18 @@ void System_Running()
 //	MQ2_TIMER = SYS_1S;
 //	MQ2_Handle();
 //}
+//	uint8_t t;
+//	Uart_Data_t *sUart1_Data = GetUart_Data_t(Uart1_NUM);
+//	if(USART_RX_STA&0x8000)
+//	{					   
+//		sUart1_Data->RxLen = USART_RX_STA&0x3fff;//得到此次接收到的数据长度
+//		printf("\r\n您发送的消息为:\r\n\r\n");
+//		for(t=0;t<sUart1_Data->RxLen;t++)
+//		{
+//			USART_SendData(USART1, sUart1_Data->RxBuf[t]);//向串口1发送数据
+//			while(USART_GetFlagStatus(USART1,USART_FLAG_TC)!=SET);//等待发送结束
+//		}
+//		printf("\r\n\r\n");//插入换行
+//		USART_RX_STA=0;
+//	}
 

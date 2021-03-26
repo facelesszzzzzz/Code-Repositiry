@@ -30,5 +30,9 @@
 ..\obj\bsp.o: ..\STM32F10x_FWLib\inc\stm32f10x_usart.h
 ..\obj\bsp.o: ..\STM32F10x_FWLib\inc\stm32f10x_wwdg.h
 ..\obj\bsp.o: ..\STM32F10x_FWLib\inc\misc.h
+..\obj\bsp.o: ..\USER\config.h
+..\obj\bsp.o: ..\SYSTEM\datatype\datatype.h
 ..\obj\bsp.o: ..\BSP\inc\bsp_gpio.h
 ..\obj\bsp.o: ..\BSP\inc\bsp_uart.h
+..\obj\bsp.o: ..\BSP\inc\bsp_interrupt.h
+..\obj\bsp.o: ..\BSP\inc\bsp.h

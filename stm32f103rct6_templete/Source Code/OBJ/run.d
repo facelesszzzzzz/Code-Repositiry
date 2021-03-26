@@ -30,3 +30,11 @@
 ..\obj\run.o: ..\STM32F10x_FWLib\inc\stm32f10x_usart.h
 ..\obj\run.o: ..\STM32F10x_FWLib\inc\stm32f10x_wwdg.h
 ..\obj\run.o: ..\STM32F10x_FWLib\inc\misc.h
+..\obj\run.o: ..\BSP\inc\bsp.h
+..\obj\run.o: ..\USER\config.h
+..\obj\run.o: ..\SYSTEM\datatype\datatype.h
+..\obj\run.o: ..\BSP\inc\bsp_gpio.h
+..\obj\run.o: ..\BSP\inc\bsp_uart.h
+..\obj\run.o: ..\BSP\inc\bsp_interrupt.h
+..\obj\run.o: ..\BSP\inc\bsp.h
+..\obj\run.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h

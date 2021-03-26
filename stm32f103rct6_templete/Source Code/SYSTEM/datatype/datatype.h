@@ -22,6 +22,26 @@ typedef union
 	uint8_t ALL;
 }Byte8;
 
+typedef union
+{
+	uint8_t Ev25MsFlag 	: 1;
+	uint8_t Ev50MsFlag 	: 1;
+	uint8_t Ev100MsFlag : 1;
+	uint8_t Ev500MsFlag : 1;
+	uint8_t Ev1SFlag 	: 1;
+}TimeTypeDef_t;
+
+//typedef struct
+//{
+//	uint8_t EvSysResetFlag	: 1;
+//}EventHandleDef_t;
+
+//typedef struct
+//{
+//	TimeTypeDef_t EvTime;
+//	EventHandleDef_t EvHandle;
+//}EventTypeDef_t;
+
 
 typedef struct
 {

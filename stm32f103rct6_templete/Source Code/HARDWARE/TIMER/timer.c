@@ -1,7 +1,7 @@
 #include "timer.h"
 #include <string.h>
 #include "glob.h"
-u8 gTimer[MAX_TIMER];
+//u8 gTimer[MAX_TIMER];
 /**********************************************************************
 * 函数名称：TIM3_Int_Init
 * 功能描述：通用定时器3中断初始化
@@ -33,7 +33,7 @@ void TIM3_Int_Init(u16 arr,u16 psc)
 	NVIC_Init(&NVIC_InitStructure);  //初始化NVIC寄存器
 	
 	TIM_Cmd(TIM3, ENABLE);  //使能TIMx	
-	memset(gTimer,0,MAX_TIMER);
+//	memset(gTimer,0,MAX_TIMER);
 }
 
 /**********************************************************************
@@ -77,15 +77,15 @@ void TIM7_Int_Init(u16 arr,u16 psc)
 **********************************************************************/
 void TIM3_IRQHandler(void)   //TIM3中断
 {
-	u8 i;
-	if (TIM_GetITStatus(TIM3, TIM_IT_Update) != RESET)  //检查TIM3更新中断发生与否
-	{
-		for(i = 0; i < MAX_TIMER; i++)
-		{
-			if(gTimer[i]) gTimer[i]--;
-		}
-		TIM_ClearITPendingBit(TIM3, TIM_IT_Update  );  //清除TIMx更新中断标志 
-	}
+//	u8 i;
+//	if (TIM_GetITStatus(TIM3, TIM_IT_Update) != RESET)  //检查TIM3更新中断发生与否
+//	{
+//		for(i = 0; i < MAX_TIMER; i++)
+//		{
+//			if(gTimer[i]) gTimer[i]--;
+//		}
+//		TIM_ClearITPendingBit(TIM3, TIM_IT_Update  );  //清除TIMx更新中断标志 
+//	}
 }
 
 /**********************************************************************

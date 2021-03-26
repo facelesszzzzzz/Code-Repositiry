@@ -6,7 +6,7 @@
 #define Uart2_NUM	2
 #define Uart3_NUM	3
 
-#define Uart1_EN	0
+#define Uart1_EN	1
 #define Uart2_EN	0
 #define Uart3_EN	1
 
@@ -23,8 +23,8 @@
 #define Uart3_PreemptionPriority	0
 #define Uart3_SubPriority			2
 
-#define USARTx_TX_LENGTH		100
-#define USARTx_RX_LENGTH		100
+#define USARTx_TX_LENGTH		200
+#define USARTx_RX_LENGTH		200
 
 
 typedef struct
@@ -34,6 +34,9 @@ typedef struct
 	uint8_t RxBuf[USARTx_RX_LENGTH];
 	uint8_t RxLen;
 }Uart_Data_t;
+
+extern uint16_t USART_RX_STA;         		//接收状态标记
+//extern Uart_Data_t *pUart1_Data, *pUart2_Data, *pUart3_Data;
 
 void BSP_Uart_Init(void);
 Uart_Data_t *GetUart_Data_t(uint8_t Uartx);

@@ -32,3 +32,9 @@
 ..\obj\main.o: ..\STM32F10x_FWLib\inc\misc.h
 ..\obj\main.o: ..\SYSTEM\warning\warning.h
 ..\obj\main.o: ..\BSP\inc\bsp.h
+..\obj\main.o: ..\USER\config.h
+..\obj\main.o: ..\SYSTEM\datatype\datatype.h
+..\obj\main.o: ..\BSP\inc\bsp_gpio.h
+..\obj\main.o: ..\BSP\inc\bsp_uart.h
+..\obj\main.o: ..\BSP\inc\bsp_interrupt.h
+..\obj\main.o: ..\BSP\inc\bsp.h
