@@ -1,0 +1,3 @@
+---- NULL Matches (2 in 1 files) ----
+Bsp_gpio.c (source code\bsp\src):	GPIO_Pin_t *sGet = NULL;
+Bsp_gpio.c (source code\bsp\src):	GPIO_Pin_t *sInit = NULL; 
